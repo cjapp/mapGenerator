@@ -25,8 +25,10 @@ int main(int argc, char** argv)
 
   MapGenerator mg(WIDTH,HEIGHT);
   mg.setSeed(gseed);
-  mg.generateElevation(250,4,0.3);
-  //mg.generatePercipitation(100);
+  mg.setCenter(450,450);
+  mg.setMaxDistance(WIDTH/1.5);
+
+  mg.generateElevation(250,3,0.4);
 
   Map<double> map(WIDTH,HEIGHT);
 
@@ -37,6 +39,7 @@ int main(int argc, char** argv)
     {
       double n = mg.getElevation(x,y);
       n -= floor(n);
+      n += 0.1;
 
       map[x][y] = n;
 

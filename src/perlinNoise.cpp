@@ -126,7 +126,7 @@ double PerlinNoise::pNoise2(double x, double y)
   int BBA = p[p[p[X+1]+ Y+1]];
 
   // Add blended results from 8 corners of cube
-  double x1,x2,y1,y2;
+  double x1,x2;
   x1 = lerp(grad2(AAA,x,y),   grad2(BAA,x-1,y),   u);
   x2 = lerp(grad2(ABA,x,y-1), grad2(BBA,x-1,y-1), u);
 
